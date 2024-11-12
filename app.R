@@ -13,7 +13,7 @@ us_accident_data <- us_accident_data %>%
                         state.name[match(State, state.abb)])
   )
 ui <- fluidPage(
-  ## Feature 1: The css style makes the UI look nicer for users since I add some beautiful font styles and some colors
+  ## Feature 1: I add some beautiful font styles and some colors by CSS, making the UI look nicer for users.
   includeCSS("www/style.css"),
   titlePanel("US Accidents Exploration"),
   sidebarLayout(
@@ -31,7 +31,7 @@ ui <- fluidPage(
         outputId = "download_table",
         label = "Download as a .csv file"
       ),
-      ## Feature 4: The image I added highlights the topics to be researched in this app for users: accidents
+      ## Feature 4: The image I added highlights the topics to be researched in this app for users: accidents, also makes the app look nicer.
       div(
         img(src = "dataset-cover.jpg", style = "width: 100%; margin-top: 20px; border-radius: 10px;")
       )
