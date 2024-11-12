@@ -79,7 +79,7 @@ server <- function(input, output) {
   })
   ## Feature 6: The interactive table allows users to sort and browse the filtered accident data conveniently within the application,
   ## making it more convenient to explore and understand the dataset.
-  output$accident_table <- renderDT({
+  output$accident_table <- renderDataTable({
     datatable(filtered_data(), options = list(pageLength = 10))
   })
 
