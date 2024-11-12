@@ -17,7 +17,7 @@ Since the original dataset is too large (7,728,394 rows and the size is around 5
 
 In assignment B3, I focus on the relationship of numbers of accidents in different states in US based on the range of years, so I conducted the following six features:
 
-1. Feature 1: I add some beautiful font styles and some colors by CSS, making the UI look nicer for users.
+1. I add some beautiful font styles and some colors by CSS, making the UI look nicer for users.
 
 2. The slider allows filter accident data based on a specific range of years, helping users focus on data from the desired time period, which is useful for identifying trends over time.
 
