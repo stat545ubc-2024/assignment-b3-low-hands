@@ -15,7 +15,7 @@ Since the original dataset is too large (7,728,394 rows and the size is around 5
 
 ## Description
 
-In assignment B3, I focus on the relationship of numbers of accidents in different states in US based on the range of years, so I conducted the following six features:
+I focus on the relationship of numbers of accidents in different states in US based on the range of years, so I conducted the following six features:
 
 1. I add some beautiful font styles and some colors by CSS, making the UI look nicer for users.
 
@@ -30,6 +30,4 @@ In assignment B3, I focus on the relationship of numbers of accidents in differe
 6. The interactive table allows users to sort and browse the filtered accident data conveniently within the application, making it more convenient to explore and understand the dataset.
 
 ## Link
-Link for Assignment B-3 is here:
-
-https://ruig.shinyapps.io/assignment-b3-low-hands/
+Link is here: https://ruig.shinyapps.io/assignment-b3-low-hands/
