@@ -11,7 +11,7 @@ Since the original dataset is too large (7,728,394 rows and the size is around 5
 
 - First, I deleted all the rows that contain missing values.
 - Second, I filtered variables that won't be helpful to my project (only keeping 11 variables left).
-- Last, I only picked the first row out of every ten, which helped me reduce the size of the dataset considerably (only 772,840 rows left and the size is around 30 MB).
+- Last, I only picked the first row out of every twenty, which helped me reduce the size of the dataset considerably (only 386,420 rows left and the size is around 30 MB).
 
 ## Description
 
