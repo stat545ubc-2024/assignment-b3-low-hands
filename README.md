@@ -29,7 +29,7 @@ In assignment B3, I focus on the relationship of numbers of accidents in differe
 
 6. The interactive table allows users to sort and browse the filtered accident data conveniently within the application, making it more convenient to explore and understand the dataset.
 
-## ShinyApp link
+## Link
 Link for Assignment B-3 is here:
 
 https://ruig.shinyapps.io/assignment-b3-low-hands/
