@@ -7,7 +7,7 @@ The goal of my app is to analyze and visualize the dataset regarding with the ac
 The Dataset used in this respository is based on the open source taken from Kaggle. The link to the original dataset can be found here: [US Accidents (2016 - 2023)](https://www.kaggle.com/datasets/sobhanmoosavi/us-accidents/data)
 
 ### Data preprosessing
-Since the original dataset is too large (7,728,394 rows and the size is around 5GB), I did the following work to compress the size of the dataset. (The preprosessing file isn't included here)
+Since the original dataset is too large (7,728,394 rows and the size is around 5GB), I did the following work to compress the size of the dataset (The preprosessing file isn't included here).
 
 - First, I deleted all the rows that contain missing values.
 - Second, I filtered variables that won't be helpful to my project (only keeping 11 variables left).
