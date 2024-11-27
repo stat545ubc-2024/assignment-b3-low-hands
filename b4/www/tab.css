@@ -1,0 +1,22 @@
+.nav-tabs-custom .nav-tabs li.active {
+    border-top-color: #00a65a !important;
+    border-top-width: 0 !important;
+}
+/* 默认选项样式 */
+.selectize-dropdown .selectize-dropdown-content .option {
+    background-color: #ffffff !important; /* 白色背景 */
+    color: #000000 !important;            /* 黑色文字 */
+}
+
+/* 悬停时的选项样式 */
+.selectize-dropdown .selectize-dropdown-content .option:hover {
+    background-color: #00a65a !important; /* 悬停时绿色背景 */
+    color: #ffffff !important;            /* 白色文字 */
+}
+
+/* 选中时的选项样式 */
+.selectize-dropdown .selectize-dropdown-content .option.selected,
+.selectize-dropdown .selectize-dropdown-content .option.active {
+    background-color: #00a65a !important; /* 选中时绿色背景 */
+    color: #ffffff !important;            /* 白色文字 */
+}
