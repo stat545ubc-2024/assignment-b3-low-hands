@@ -140,7 +140,7 @@ ui <- dashboardPage(
                     id = "factors_tabbox",
                     height = "800px",
                     width = 12,
-                    # Weathe
+                    # Weather
                     tabPanel("Weather",
                              h3("Weather Factors"),
                              # Filters
