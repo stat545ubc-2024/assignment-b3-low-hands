@@ -18,7 +18,7 @@ Since the original dataset is too large (7,728,394 rows and the size is around 5
 
 #### Assignment B4
 
-Because the functionality that needs to be implemented has changed and I need to streamline the number of variables, I've reprocessed the dataset. Now there are only 10 variables left (375516 rows and 28.4MB).
+Because the functionality that needs to be implemented has changed and I need to streamline the number of variables, I've reprocessed the dataset. There are only 10 variables left after I did so (375516 rows and 28.4MB). When I tried to deploy it on the website, it was still too large to show some of my app's contents online. **So finally I used `sample_n()` to select 30,000 rows of the dataset randomly.**
 
 ## Description
 
@@ -42,23 +42,25 @@ I focus on the relationship of numbers of accidents in different states in US ba
 
 In B4, I keep **all the features** in B3. What's more, I completed more features and the following are what are newly added.
 
-7.  I created a USA map with leaflet. It shows the distribution of locations and the number of accidents in each state. The map is dynamic and you can click on it to see more details about specific accidents.
+7.  I created a USA map with `leaflet`. It shows the distribution of locations and the number of accidents in each state. The map is dynamic and you can click on it to see more details about specific accidents.
 
 8.  I implemented checkbox feature, specifically the ability to choose whether or not to display auxiliary lines when drawing histograms.
 
 9.  I implemented button feature. This is reflected in `time` tab, which allows you to choose between hourly and monthly charts.
 
-10. I created histograms in `weather` tab. Filter features are kept.
+10. I created histograms in `weather` tab. Features about filters are kept.
 
-11. I created bar plots in `environment` tab. Filter features are kept and you can choose your favorite colors to draw the plots.
+11. I created bar plots in `environment` tab. Features about filters are kept and you can choose your favorite colors to draw the plots.
 
-12. I created line graphs in `time` tab. Filter features are kept.
+12. I created line graphs in `time` tab. Features about filters are kept.
+
+13. I used `Rhtml` to store the text for the information tabs called "About Dataset", "How to Use the App" and "Conclusion".
 
 ## Link
 
 B3 Link is here: <https://ruig.shinyapps.io/assignment-b3-low-hands/>
 
-B4 Link is here: <https://ruig.shinyapps.io/B4ShinyApp/>
+B4 Link is here: <https://ruig.shinyapps.io/AccidentApp/>
 
 ## Acknowledgements
 

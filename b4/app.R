@@ -12,6 +12,8 @@ library(paletteer) # For beautiful colors!
 
 # Load dataset
 us_accident_data <- read.csv("us_accident.csv")
+# Only select 30,000 rows
+us_accident_data <- sample_n(us_accident_data,30000,replace = FALSE)
 
 # Preprocessing
 us_accident_data <- us_accident_data %>%
@@ -170,7 +172,14 @@ ui <- dashboardPage(
                                  )
                                )
                              ),
-                             plotOutput("weather_plot_filtered")
+                             fluidRow(
+                               box(
+                                 title = "Bar Plot",
+                                 status = "success",
+                                 width = 12,
+                                 plotOutput("weather_plot_filtered")
+                               )
+                             ),
                     ),
                     
                     # Environment
@@ -309,7 +318,7 @@ ui <- dashboardPage(
                              ),
                              fluidRow(
                                box(
-                                 title = "Accidents Time Plot",
+                                 title = "Line Plot",
                                  status = "success",
                                  width = 12,
                                  plotOutput("accidents_time_plot")
@@ -348,7 +357,7 @@ server <- function(input, output, session) {
       )
   })
   
-  # Reacrive: filter data for table
+  # Reactive: filter data for table
   summarized_data <- reactive({
     filtered_data() %>%
       group_by(State, State_Name) %>%
@@ -467,7 +476,8 @@ server <- function(input, output, session) {
         ) +
         coord_flip() +
         scale_y_continuous(labels = scales::percent_format()) +
-        theme_minimal()
+        theme_minimal()+
+        theme(plot.title = element_text(hjust = 0.5))
     })
   })
   
@@ -513,7 +523,8 @@ server <- function(input, output, session) {
         x = selected_var,
         y = "Density"
       ) +
-      theme_minimal()
+      theme_minimal() + 
+      theme(plot.title = element_text(hjust = 0.5) )
     # Show it
     p
   })
