@@ -22,7 +22,7 @@ The goal of my app is to analyze and visualize the dataset regarding with the ac
     -   **app.R:** It's the code for constructing the app for B4.
     -   **us_accident.csv:** It's the dataset I used after processing for B4.
     -   **b4.Rproj:** It's the configuration file used to manage the project b4.
--   **README.md:** It's the introduction of my B4 repository.
+-   **README.md:** It's the brief introduction of my repository and shinyapp.
 
 ## About Dataset I used
 
