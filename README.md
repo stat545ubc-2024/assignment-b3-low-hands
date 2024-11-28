@@ -64,19 +64,19 @@ I focus on the relationship of numbers of accidents in different states in US ba
 
 In B4, I keep **all the features** in B3. What's more, I completed more features and the following are what are newly added.
 
-7.  I created a USA map with `leaflet`. It shows the distribution of locations and the number of accidents in each state. The map is dynamic and you can click on it to see more details about specific accidents.
+7.  I created a USA leaflet map. It shows the distribution of locations and the number of accidents in each state. The map is dynamic and you can click on it to see more details about specific accidents.
 
 8.  I implemented checkbox feature, specifically the ability to choose whether or not to display auxiliary lines when drawing histograms.
 
-9.  I implemented button feature. This is reflected in **time** tab, which allows you to choose between hourly and monthly charts.
+9.  I implemented button feature. This is reflected in `time` tab, which allows you to choose between hourly and monthly charts.
 
-10. I created bar plots in **weather** tab. Features about filters are kept.
+10. I created bar plots in `weather` tab. Features about filters are kept.
 
-11. I created histograms in **environment** tab. Features about filters are kept and you can choose your favorite colors to draw the plots.
+11. I created histograms in `environment` tab. Features about filters are kept and you can choose your favorite colors to draw the plots.
 
-12. I created line plots in **time** tab. Features about filters are kept.
+12. I created line plots in `time` tab. Features about filters are kept.
 
-13. I used **Rhtml** to store the text for the information tabs called "About Dataset", "How to Use the App" and "Conclusion".
+13. I used `Rhtml` to store the text for the information tabs called "About Dataset", "How to Use the App" and "Conclusion".
 
 ## Link
 
