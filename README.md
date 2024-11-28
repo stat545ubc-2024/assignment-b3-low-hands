@@ -78,6 +78,8 @@ In B4, I keep **all the features** in B3. What's more, I completed more features
 
 13. I used Rhtml files to store the text for the information tabs called "About Dataset", "How to Use the App" and "Conclusion".
 
+14. I applied dashboards to make UI look more organized.
+
 ## Link
 
 B3 Link is here: <https://ruig.shinyapps.io/assignment-b3-low-hands/>
