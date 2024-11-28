@@ -68,7 +68,7 @@ In B4, I keep **all the features** in B3. What's more, I completed more features
 
 8.  I implemented checkbox feature, specifically the ability to choose whether or not to display auxiliary lines when drawing histograms.
 
-9.  I implemented button feature. This is reflected in `time` tab, which allows you to choose between hourly and monthly charts.
+9.  I implemented button feature. This is reflected in **time** tab, which allows you to choose between hourly and monthly charts.
 
 10. I created histograms in **weather** tab. Features about filters are kept.
 
