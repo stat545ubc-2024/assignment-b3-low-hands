@@ -40,7 +40,7 @@ Since the original dataset is too large (7,728,394 rows and the size is around 5
 
 #### Assignment B4
 
-Because the functionality that needs to be implemented has changed and I need to streamline the number of variables, I've reprocessed the dataset. There are only 10 variables left after I did so (375516 rows and 28.4MB). When I tried to deploy it on the website, it was still too large to show some of my app's contents online. **So finally I used `sample_n()` to select 30,000 rows of the dataset randomly in my code (That is, I selected the subset of the dataset I talked about above).**
+Because the functionality that needs to be implemented has changed and I need to streamline the number of variables, I've reprocessed the dataset. There are only 10 variables left after I did so (375516 rows and 28.4MB). **However, when I tried to deploy it on the website, it was still too large to show some of my app's contents online. So finally I used `sample_n()` to select 30,000 rows of the dataset randomly in my code (That is, I selected the subset of the dataset I talked about above).**
 
 ## Description
 
