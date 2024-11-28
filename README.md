@@ -76,7 +76,7 @@ In B4, I keep **all the features** in B3. What's more, I completed more features
 
 12. I created line plots in `time` tab. Features about filters are kept.
 
-13. I used `Rhtml` to store the text for the information tabs called "About Dataset", "How to Use the App" and "Conclusion".
+13. I used Rhtml files to store the text for the information tabs called "About Dataset", "How to Use the App" and "Conclusion".
 
 ## Link
 
