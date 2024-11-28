@@ -62,6 +62,28 @@ B3 Link is here: <https://ruig.shinyapps.io/assignment-b3-low-hands/>
 
 B4 Link is here: <https://ruig.shinyapps.io/AccidentApp/>
 
+## Repository Structure
+
+-   **b3:** It contains the content of my shinyapp in assignment B3.
+    -   **www:** It contains one image and one css file.
+        -   **dataset-cover.jpg:** I used this image as one feature for B3.
+        -   **style.css:** This helps me change the font and color of my shinyapp for B3.
+    -   **app.R:** It's the code for constructing the app for B3.
+    -   **us_accident.csv:** It's the dataset I used after processing for B3.
+    -   **b3.Rproj:** It's the configuration file used to manage the project b3.
+-   **b3:** It contains the content of my shinyapp in assignment B4.
+    -   **www:** It contains one image, two css files and three Rhtml files.
+        -   **car_crash.png:** I used this image as one feature in B4.
+        -   **title.css:** This helps me change the font of the title for my shinyapp for B4.
+        -   **tab.css:** This helps me change the colors of the tabs in my shinyapp for B4.
+        -   **dataintro.Rhtml:** This includes the text for dataset introduction.
+        -   **instruction.Rhtml:** This includes the text for how to use the app.
+        -   **conclusion.Rhtml:** This includes the conclusion that I got from the analysis of the dataset.
+    -   **app.R:** It's the code for constructing the app for B4.
+    -   **us_accident.csv:** It's the dataset I used after processing for B4.
+    -   **b4.Rproj:** It's the configuration file used to manage the project b4.
+-   **README.md:** It's the introduction of my B4 repository.
+
 ## Acknowledgements
 
 -   Moosavi, Sobhan, Mohammad Hossein Samavatian, Srinivasan Parthasarathy, and Rajiv Ramnath. “[A Countrywide Traffic Accident Dataset.](https://arxiv.org/abs/1906.05409)”, 2019.
