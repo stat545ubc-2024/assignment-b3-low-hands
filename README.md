@@ -64,7 +64,7 @@ I focus on the relationship of numbers of accidents in different states in US ba
 
 In B4, I keep **all the features** in B3. What's more, I completed more features and the following are what are newly added.
 
-7.  I created a USA leaflet map. It shows the distribution of locations and the number of accidents in each state. The map is dynamic and you can click on it to see more details about specific accidents.
+7.  I created a USA leaflet map. It shows the distribution of locations and the number of accidents in each state. The map is dynamic and you can click on it to see more details about specific accidents. **It needs a few seconds to load the data and show the dynamic table and maps on the website. Thank you for your patience :-)**
 
 8.  I implemented checkbox feature, specifically the ability to choose whether or not to display auxiliary lines when drawing histograms.
 
