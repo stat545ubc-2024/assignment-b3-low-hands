@@ -70,11 +70,11 @@ In B4, I keep **all the features** in B3. What's more, I completed more features
 
 9.  I implemented button feature. This is reflected in **time** tab, which allows you to choose between hourly and monthly charts.
 
-10. I created histograms in **weather** tab. Features about filters are kept.
+10. I created bar plots in **weather** tab. Features about filters are kept.
 
-11. I created bar plots in **environment** tab. Features about filters are kept and you can choose your favorite colors to draw the plots.
+11. I created histograms in **environment** tab. Features about filters are kept and you can choose your favorite colors to draw the plots.
 
-12. I created line graphs in **time** tab. Features about filters are kept.
+12. I created line plots in **time** tab. Features about filters are kept.
 
 13. I used **Rhtml** to store the text for the information tabs called "About Dataset", "How to Use the App" and "Conclusion".
 
