@@ -93,36 +93,42 @@ ui <- dashboardPage(
                          width = 12,
                          textOutput("result_count"),
                          DT::dataTableOutput("accident_table")
-                       ),
-                       tags$div(
-                         style = "margin-top: 10px;",
-                         img(src = "car_crash.png", height = "225px", width = "100%")
                        )
                 ),
                 column(width = 6,
                        # By severity
-                       selectInput("severity_part", "Select Severity of Accident:", 
-                                   choices = c("All", "1", "2", "3", "4"), 
-                                   selected = "All"),
-                       # By year
-                       sliderInput("year_part", "Select Year Range:",
+                       fluidRow(
+                         column(width = 6,
+                                selectInput("severity_part", "Select Severity of Accident:", 
+                                    choices = c("All", "1", "2", "3", "4"), 
+                                    selected = "All"),
+                                # By year
+                                sliderInput("year_part", "Select Year Range:",
                                    # chooseSliderSkin("Modern"),
-                                   min = min(us_accident_data$Year, na.rm = TRUE),
-                                   max = max(us_accident_data$Year, na.rm = TRUE),
-                                   value = c(min(us_accident_data$Year, na.rm = TRUE), max(us_accident_data$Year, na.rm = TRUE)),
-                                   sep = ""),
-                       # By state
-                       selectInput("state_part", "Select State:",
-                                   choices = c("All" = "All", states_df$State),
-                                   selected = "All"),
-                       # By day or night
-                       selectInput("day_night_part", "Day or Night:",
-                                   choices = c("All", "Day", "Night"),
-                                   selected = "All"),
-                       # Download
-                       downloadButton("download_part", "Download as CSV"),
-                       # Map
-                       leafletOutput("map_part", height = "400px")
+                                    min = min(us_accident_data$Year, na.rm = TRUE),
+                                    max = max(us_accident_data$Year, na.rm = TRUE),
+                                    value = c(min(us_accident_data$Year, na.rm = TRUE), max(us_accident_data$Year, na.rm = TRUE)),
+                                    sep = ""),
+                                # By state
+                                selectInput("state_part", "Select State:",
+                                    choices = c("All" = "All", states_df$State),
+                                    selected = "All"),
+                                # By day or night
+                                selectInput("day_night_part", "Day or Night:",
+                                    choices = c("All", "Day", "Night"),
+                                    selected = "All"),
+                                # Download
+                                downloadButton("download_part", "Download as CSV")
+                         ),
+                         column(width = 6,
+                                tags$div(
+                                  style = "margin-top: 10px;",
+                                  img(src = "car.png", height = "300px", width = "100%")
+                                )
+                              )
+                       ),
+                                # Map
+                                leafletOutput("map_part", height = "400px")
                 )
               )
       ),
@@ -351,21 +357,24 @@ server <- function(input, output, session) {
       filter(
         Year >= input$year_part[1],
         Year <= input$year_part[2],
+        # If not all, select the filters
         if (input$severity_part != "All") Severity == input$severity_part else TRUE,
+        # Like above
         if (input$state_part != "All") State == input$state_part else TRUE,
         if (input$day_night_part != "All") Sunrise_Sunset == input$day_night_part else TRUE
       )
   })
   
-  # Reactive: filter data for table
+  # Reactive: filter data for dynamic table
   summarized_data <- reactive({
     filtered_data() %>%
+      # Group by state
       group_by(State, State_Name) %>%
       summarise(Total_Accidents = n(), .groups = "drop") %>%
       arrange(State_Name)
   })
   
-  # Reactive: total accidents calculation
+  # Reactive: dynamic text of total accidents calculation
   total_accidents_text <- reactive({
     data <- summarized_data()
     year_range <- input$year_part
@@ -377,20 +386,24 @@ server <- function(input, output, session) {
     data <- filtered_data()
     # Create it
     leaflet(data) %>%
+      # Map style
       addProviderTiles("CartoDB.Positron") %>%
       setView(lng = -98.5795, lat = 39.8283, zoom = 4) %>% # USA
+      # Add markers on the map
       addCircleMarkers(
         lng = ~Longitude,
         lat = ~Latitude,
         radius = 5,
         stroke = FALSE,
         fillOpacity = 0.7,
+        # Pop the details of the accidents
         popup = ~paste(
           "<strong>Severity:</strong>", Severity, "<br>",
           "<strong>State:</strong>", State_Name, "<br>",
           "<strong>Year:</strong>", Year, "<br>",
           "<strong>Start Time:</strong>", Start_Time
         ),
+        # Clusters
         clusterOptions = markerClusterOptions()
       ) 
   })
@@ -410,46 +423,48 @@ server <- function(input, output, session) {
     }
   )
   
-  # RenderText for total accidents
+  # Dynamic Text for total accidents
   output$result_count <- renderText({
     total_accidents_text()
   })
   
-  # RenderDynamicTable for accidents
+  # Dynamic Table for accidents
   output$accident_table <- renderDT({
     datatable(summarized_data(), options = list(pageLength = 10))
   })
   
   # Weather plot
   output$weather_plot_filtered <- renderPlot({
-    tryCatch({
-      # Filter
+    {
+      # Filters
+      # By year
       filtered_weather_data <- us_accident_data %>%
         filter(
           Year >= input$weather_year_range[1],
           Year <= input$weather_year_range[2]
         )
       
+      # By state
       if (input$weather_state != "All") {
         filtered_weather_data <- filtered_weather_data %>% filter(State %in% input$weather_state)
       }
       
+      # By day or night
       if (input$weather_day_night != "All") {
         filtered_weather_data <- filtered_weather_data %>% filter(Sunrise_Sunset == input$weather_day_night)
       }
       
       # Only select the top 9 most weather conditions
       weather_counts <- filtered_weather_data %>%
-        filter(Weather_Condition != "") %>%
         group_by(Weather_Condition) %>%
         summarise(total_count = n(), .groups = "drop") %>%
         arrange(desc(total_count)) %>%
-        slice_head(n = 9) # 选择事故最多的前9种
+        slice_head(n = 9) 
       
       # Weather conditions after filtering
       top_weather_conditions <- weather_counts$Weather_Condition
       
-      # 进一步过滤数据，仅保留前9种天气状况
+      # Only keep the top 9 weather conditions
       final_weather_data <- filtered_weather_data %>%
         filter(Weather_Condition %in% top_weather_conditions) %>%
         group_by(Weather_Condition, Severity) %>%
@@ -461,9 +476,10 @@ server <- function(input, output, session) {
       
       # Choose the color I like!
       color_scheme <- paletteer_dynamic("cartography::green.pal", 5)
+      
       # Apply to the severity meanwhile
       names(color_scheme) <- levels(us_accident_data$Severity)
-      
+
       # Bar plot for weather
       ggplot(final_weather_data, aes(x = reorder(Weather_Condition, -total_count), y = percent, fill = Severity)) +
         geom_bar(stat = "identity") +
@@ -474,11 +490,12 @@ server <- function(input, output, session) {
           y = "Proportion",
           fill = "Severity"
         ) +
+        # Flip
         coord_flip() +
         scale_y_continuous(labels = scales::percent_format()) +
         theme_minimal()+
         theme(plot.title = element_text(hjust = 0.5))
-    })
+    }
   })
   
   # Environment data filtering
@@ -487,6 +504,7 @@ server <- function(input, output, session) {
       filter(
         Year >= input$f_env_year_range[1],
         Year <= input$f_env_year_range[2],
+        # Same as above
         if (input$f_env_state != "All") State == input$f_env_state else TRUE,
         if (input$f_env_day_night != "All") Sunrise_Sunset == input$f_env_day_night else TRUE,
         if (input$f_env_weather != "All") Weather_Condition == input$f_env_weather else TRUE
@@ -516,6 +534,7 @@ server <- function(input, output, session) {
     if (show_density) {
       p <- p + geom_density(color = "blue", linewidth = 1)
     }
+    
     # Add title and x/y
     p <- p +
       labs(
@@ -533,12 +552,14 @@ server <- function(input, output, session) {
   filtered_time_data <- reactive({
     us_accident_data %>%
       filter(
+        # Same
         Year >= input$f_time_year_range[1],
         Year <= input$f_time_year_range[2],
         if (input$f_time_state != "All") State == input$f_time_state else TRUE,
         if (input$f_time_day_night != "All") Sunrise_Sunset == input$f_time_day_night else TRUE,
         if (input$f_time_weather != "All") Weather_Condition == input$f_time_weather else TRUE
       ) %>%
+      # Extract date information
       mutate(
         hour = hour(Start_Time),
         month_num = month(Start_Time),
@@ -546,8 +567,9 @@ server <- function(input, output, session) {
       )
   })
   
-  # Reactive: time aggregated data
+  # Reactive: time
   aggregated_time_data <- reactive({
+    # Monthly or hourly
     if (input$time_period == "hour") {
       filtered_time_data() %>%
         group_by(hour) %>%
@@ -560,7 +582,7 @@ server <- function(input, output, session) {
     }
   })
   
-  # Time plot
+  # Time line plot
   output$accidents_time_plot <- renderPlot({
     data <- aggregated_time_data()
     if (input$time_period == "hour") {

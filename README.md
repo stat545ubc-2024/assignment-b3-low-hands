@@ -1,10 +1,10 @@
 # MyShinyApp - USA Accidents
 
-The goal of my app is to analyze and visualize the dataset regarding with the accidents information in US from 2016 to 2023. The overview of the dashboard is in a ShinyApp hosted on shinyapps.io.
+The goal of my app is to analyze and visualize the dataset regarding with the accidents information in US from 2016 to 2023. To be specific, I want to explore the distribution of the accidents in different states and analyze the potential factors causing the occurence of accidents. The overview of the dashboard is in a ShinyApp hosted on shinyapps.io.
 
-## About Dataset
+## About Dataset I used
 
-The Dataset used in this respository is based on the open source taken from Kaggle. The link to the original dataset can be found here: [US Accidents (2016 - 2023)](https://www.kaggle.com/datasets/sobhanmoosavi/us-accidents/data)
+The Dataset used for assignment B3 and B4 is based on the open source taken from Kaggle. The link to the original dataset can be found here: [US Accidents (2016 - 2023)](https://www.kaggle.com/datasets/sobhanmoosavi/us-accidents/data)
 
 ### Data Preprosessing
 
@@ -56,12 +56,6 @@ In B4, I keep **all the features** in B3. What's more, I completed more features
 
 13. I used **Rhtml** to store the text for the information tabs called "About Dataset", "How to Use the App" and "Conclusion".
 
-## Link
-
-B3 Link is here: <https://ruig.shinyapps.io/assignment-b3-low-hands/>
-
-B4 Link is here: <https://ruig.shinyapps.io/AccidentApp/>
-
 ## Repository Structure
 
 -   **b3:** It contains the content of my shinyapp in assignment B3.
@@ -73,7 +67,7 @@ B4 Link is here: <https://ruig.shinyapps.io/AccidentApp/>
     -   **b3.Rproj:** It's the configuration file used to manage the project b3.
 -   **b4:** It contains the content of my shinyapp in assignment B4.
     -   **www:** It contains one image, two css files and three Rhtml files.
-        -   **car_crash.png:** I used this image as one feature in B4.
+        -   **car.png:** I used this image as one feature in B4.
         -   **title.css:** This helps me change the font of the title for my shinyapp for B4.
         -   **tab.css:** This helps me change the colors of the tabs in my shinyapp for B4.
         -   **dataintro.Rhtml:** This includes the text for dataset introduction.
@@ -83,6 +77,12 @@ B4 Link is here: <https://ruig.shinyapps.io/AccidentApp/>
     -   **us_accident.csv:** It's the dataset I used after processing for B4.
     -   **b4.Rproj:** It's the configuration file used to manage the project b4.
 -   **README.md:** It's the introduction of my B4 repository.
+
+## Link
+
+B3 Link is here: <https://ruig.shinyapps.io/assignment-b3-low-hands/>
+
+B4 Link is here: <https://ruig.shinyapps.io/AccidentApp/>
 
 ## Acknowledgements
 

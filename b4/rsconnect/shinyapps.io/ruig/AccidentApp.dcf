@@ -5,6 +5,6 @@ account: ruig
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 13476027
-bundleId: 9432769
+bundleId: 9433294
 url: https://ruig.shinyapps.io/AccidentApp/
 version: 1
