@@ -22,7 +22,7 @@ The goal of my app is to analyze and visualize the dataset regarding with the ac
     -   **app.R:** It's the code for constructing the app for B4.
     -   **us_accident.csv:** It's the dataset I used after processing for B4.
     -   **b4.Rproj:** It's the configuration file used to manage the project b4.
--   **README.md:** It's the introduction of my B4 repository.
+-   **README.md:** It's the brief introduction of my repository and shinyapp.
 
 ## About Dataset I used
 
@@ -40,7 +40,7 @@ Since the original dataset is too large (7,728,394 rows and the size is around 5
 
 #### Assignment B4
 
-Because the functionality that needs to be implemented has changed and I need to streamline the number of variables, I've reprocessed the dataset. There are only 10 variables left after I did so (375516 rows and 28.4MB). When I tried to deploy it on the website, it was still too large to show some of my app's contents online. **So finally I used `sample_n()` to select 30,000 rows of the dataset randomly.**
+Because the functionality that needs to be implemented has changed and I need to streamline the number of variables, I've reprocessed the dataset. There are only 10 variables left after I did so (375516 rows and 28.4MB). When I tried to deploy it on the website, it was still too large to show some of my app's contents online. **So finally I used `sample_n()` to select 30,000 rows of the dataset randomly in my code (That is, I selected the subset of the dataset I talked about above).**
 
 ## Description
 
