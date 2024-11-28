@@ -71,7 +71,7 @@ B4 Link is here: <https://ruig.shinyapps.io/AccidentApp/>
     -   **app.R:** It's the code for constructing the app for B3.
     -   **us_accident.csv:** It's the dataset I used after processing for B3.
     -   **b3.Rproj:** It's the configuration file used to manage the project b3.
--   **b3:** It contains the content of my shinyapp in assignment B4.
+-   **b4:** It contains the content of my shinyapp in assignment B4.
     -   **www:** It contains one image, two css files and three Rhtml files.
         -   **car_crash.png:** I used this image as one feature in B4.
         -   **title.css:** This helps me change the font of the title for my shinyapp for B4.
