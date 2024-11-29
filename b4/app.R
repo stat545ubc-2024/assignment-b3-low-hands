@@ -123,7 +123,7 @@ ui <- dashboardPage(
                          column(width = 6,
                                 tags$div(
                                   style = "margin-top: 10px;",
-                                  img(src = "car.png", height = "300px", width = "100%")
+                                  img(src = "car.png", height = "300px", style="display:block;margin-left:auto;margin-right:auto")
                                 )
                               )
                        ),
